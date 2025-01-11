@@ -4,7 +4,7 @@ import ItemCard from "../components/itemCard";
 import { useEffect, useState } from "react";
 import { useProductStore } from "../stores/product";
 import { toaster } from "../components/ui/toaster";
-import EditProductDialog from "../components/Edit ProductDialog";
+import EditProductDialog from "../components/EditProductDialog";
 
 
 function home() {
