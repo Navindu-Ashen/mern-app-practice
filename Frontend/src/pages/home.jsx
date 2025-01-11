@@ -13,7 +13,7 @@ function home() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetchProducts();
+    fetch_Products();
   }, [fetchProducts]);
 
   const handleEdit = (product) => {
