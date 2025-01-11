@@ -26,12 +26,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+
     - name: Create env file
       run: |
         echo "MONGO_URI=${{ secrets.MONGO_URI }}" > .env
+        echo "PORT=${{ secrets.PORT }}" >> .env
 
     - name: Install Dependencies and Build
       run: npm run build
+      env:
+        CI: false
+
+    - name: Start Application
+      run: |
+        npm run start &
+        sleep 10
+        curl http://localhost:${{ secrets.PORT }}/api/products || exit 1
       env:
         CI: false
