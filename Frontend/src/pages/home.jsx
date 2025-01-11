@@ -4,18 +4,19 @@ import ItemCard from "../components/itemCard";
 import { useEffect, useState } from "react";
 import { useProductStore } from "../stores/product";
 import { toaster } from "../components/ui/toaster";
-import EditProductDialog from "../components/EditProductDialog";
+import EditProductDialog from "../components/test/EditProductDialog";
+
 
 function home() {
   const { fetchProducts, products, deleteProduct, updateProduct } =
-    useProductStore();
+  useProductStore();
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  
   useEffect(() => {
-    fetch_Products();
+    fetchProducts();
   }, [fetchProducts]);
-
+  
   const handleEdit = (product) => {
     setSelectedProduct(product);
     setOpen(true);
@@ -24,6 +25,7 @@ function home() {
   console.log("Products", products);
   return (
     <Container>
+      
       <VStack spacing={8}>
         <Text
           fontSize={{ base: "xl", lg: "2xl" }}
