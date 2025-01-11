@@ -33,11 +33,13 @@ jobs:
         echo "PORT=${{ secrets.PORT }}" >> .env
 
     - name: Install Dependencies and Build
+      id: build
       run: npm run build
       env:
         CI: false
 
     - name: Start Application
+      id: start
       run: |
         npm run start &
         sleep 10
