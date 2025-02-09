@@ -8,6 +8,9 @@
 		"build": "npm install && npm install --prefix Frontend && npm run build --prefix Frontend",
 		"start": "NODE_ENV=production node Backend/server.js"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "type": "module",
   "keywords": [],
   "author": "",
