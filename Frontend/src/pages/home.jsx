@@ -38,7 +38,7 @@ function home() {
           bgClip={"text"}
           mb={16}
         >
-          <Link to={"/"}>Your Current Products 🚀</Link>
+          <Link to={"/"}>Current Products 🚀</Link>
         </Text>
 
         {products.length > 0 ? (
